@@ -1,0 +1,199 @@
+Primeiro dia estudando Java, pretendo estudar para conseguir fazer meus projetos, todos os meus projetos em Java. E queria pode guardar esse momento.
+.
+.
+.
+.
+Começando aqui no site, temos que aprender primeiramente o que é Java, 
+O que eu sei: Java é uma linguagem de programção bem conhecida, temos varios jogos e sistema que até hoje se usa java
+um deles são Manicraft e sistemas de Bancos, como por exemplo Itaú e entre outros.
+a linguagem dos anos de 1995 Java é bem popular, 100% orientada ao obejeto (POO), pode ser usada em diversas aplicações como Web, aplicativos desktop, servidores e aplicativos android nativos
+
+Agora ele fala para aprender a syntax basica dele:
+Ele sempre deve comçar com uma class e Main
+"
+public class Main{ }
+"
+------------
+E dentro dela vamos ter nosso 
+"
+public static void main(String[] args){ }
+"
+------------
+ficando assim:
+"
+public class Main {
+	public static void main(String[] args){
+	
+	}
+}
+"
+
+E para nos damos um print no terminal, temos que colocar:
+"
+system.out.println("Ola, Mundo");
+"
+
+fazendo assim o codigo completo ser:
+"
+public class Main{
+	public static void main(String[] args){
+		System.out.println("Ola, mundo");
+	}
+}
+"
+*Terminal:*
+*Ola, mundo*
+
+um codigo simples para fazer um olá mundo
+
+---------------------------------------------------
+*VARIAVEIS:*
+-Tipos-	|	Qnt.Bits	|	        Valores				|
+Bolean	|	xxxxxxxx	|	true e false				|
+Char	|	16-bits		|	0 ate 65535					|
+Byte	|	08-bits		|	-128 ate 127				|
+Short	|	16-bits		|	-32768 ate 32767			|
+Int		|	32-bits		|	-214786545 ate 214786545	|
+Long	|	64-bits		|	infinito					|
+Float	|	32-bits		|	depende						|
+Double	|	64-bits		|	depende						|
+
+Como atribuir as variaveis:
+{Tipo} {Nome Variavel} = {Valor};
+String nomeCompleto = "Mateus Araujo Monteiro";
+
+----------
+Usando variaveis:
+public class Main{
+    public static void main(String[] args){
+        String nomeCompleto = "Mateus Araujo Monteiro";
+        Byte idade = 18;
+        
+        System.out.println("Ola "+nomeCompleto+", voce tem "+idade+" anos");   
+    }
+}
+*Terminal*
+	Ola, mundo
+	Ola Mateus Araujo Monteiro, voce tem 18 anos
+
+=== Code Execution Successful ===
+
+---------------------------------------------------
+Usando Inputs em terminal em Java:
+Para usar o input em Java precisa colocar no começo do codigo:
+	import java.util.Scanner;
+	
+Quer seria a importação da bliblioteca, para utilizar ela em codigo, é necessario chamar ela na void main, dessa forma:
+	Scanner scanner = new Scanner(System.in);
+
+Colocando isso, eu podeirei usar o "scanner.next" dizendo que vai ser um input, temos:
+	 scanner.nextLine(); 	-	Usado para ler string
+	 scanner.nextInt(); 	-	Usado para ler numero inteiros
+	 scaneer.nextDouble();	- 	Usado para ler numeros reais
+
+Para usar em uma variavel nova, pode ser usada dessa forma:
+	{Tipo} {nomeVariavel} = scaneer.next{tipoNext}();
+ 
+Quanto terminar, precisa fechar o input, usando:
+	scanner.close();
+
+Exemplo:
+	import java.util.Scanner;
+
+	public class Main{
+		public static void main(String[] args){
+			// Usando Input em Java
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Digite o seu segundo Nome:");
+			String segundoNome = scanner.nextLine();
+			System.out.println("Seu segundo nome e: "+segundoNome);
+			scanner.close();
+			System.out.println("Saido do SCANNER");
+		}
+	}
+
+*Terminal*
+	Digite o seu segundo Nome:
+	Araujo
+	Seu segundo nome e: Araujo
+	Saido do SCANNER
+=== Code Execution Successful ===
+
+-----------------------------------
+extruturas IF e ELSE em Java:
+	if (condicao){
+	
+	} else {
+	
+	}
+Ou
+	if(){
+	}else if(){
+	
+	}else if(){
+	
+	}else{
+	
+	}
+
+Temos os operadores, o mais usado são os operadores logicos:
+-------------------------------------
+|	        Op Logicos				|
+-------------------------------------
+|	Simbolo		|	Valor			|
+|	!=			|	Diferente de	|
+|	==			|	igual a			|
+|	>			|	maior que		|
+|	<			|	menor que		|
+|	||			|	or				|
+|	&&			|	and 			|
+|	!			|	not				|
+|	?:			|	condicional		|
+|	,			|	virgula			|
+-------------------------------------
+
+Usando em estrutura de IF:
+	import java.util.Scanner;
+
+	public class Main{
+		public static void main(String[] args){
+			// Usando IF e Else operadores:
+			Float nota1 = 4.5f;
+			Float nota2 = 4.5f;
+			Float nota3 = 4.5f;
+			Float nota4 = 4.5f;
+			Float media = ((nota1 + nota2 + nota3 + nota4)/4);
+			
+			System.out.println("Media do aluno: "+media);
+			
+			if (media < 5f){
+				System.out.println("Aluno Reprovado");
+			} else if (media > 5f || media < 7){
+				System.out.println("Aluno em Recuperacao");
+			} else {
+				System.out.println("Aluno Aprovado");
+			}
+		}
+	}
+	
+	*Terminal*
+	Media do aluno: 4.5
+	Aluno Reprovado
+-----------------------
+
+Tambem temos o switch case, que é bem pareceido com o IF e ELSE, mas a estutura dele é um pouco diferente:
+	switch (expressao){
+		case valor1:
+			// codigo
+			break;
+		
+		case valor2:
+			// codigo
+			break;
+		
+		default:
+			// codigo
+			break;
+	}
+
+Usando no mesmo exemplo do if e else, mas agora usando o switch
